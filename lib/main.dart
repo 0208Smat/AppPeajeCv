@@ -1,5 +1,7 @@
 import 'package:app_peaje_cv/pages/InvoiInfo.dart';
+import 'package:app_peaje_cv/pages/home.dart';
 import 'package:flutter/material.dart';
+import 'package:app_peaje_cv/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +35,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       //home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: InvoiInfo(),
+      //home: InvoiInfo(),
+        home: Home(),
+        routes: routes,
     );
   }
 }

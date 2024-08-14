@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class InvoiInfo extends StatelessWidget {
+  const InvoiInfo({super.key});
   static final routName = 'invoiInfo';
 
   @override
