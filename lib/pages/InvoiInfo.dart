@@ -13,131 +13,96 @@ class InvoiInfo extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
-              'Nro. Timbrado',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 16),
-            TextField(
-              enabled: false, // Deshabilita el campo de entrada
+            SizedBox(height: 30), 
+            TextFormField(
+              enabled: false,
+              initialValue: 'xxx',
               decoration: InputDecoration(
-                labelText: 'Campo de entrada deshabilitado',
-                border: OutlineInputBorder(), // Aplica un borde alrededor del campo de entrada
+                labelText: 'Número Timbrado',
+                border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 16), // Espacio entre los campos de entrada
+            SizedBox(height: 30), // Espacio entre los campos de entrada
             Row(
-              children: <Widget>[
+              mainAxisAlignment: MainAxisAlignment
+                  .spaceBetween, // Ajusta el espacio entre los campos
+              children: [
                 Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Fecha inicio',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 8), // Espacio entre el título y el campo de entrada
-                      TextField(
-                        enabled: false, // Deshabilita el campo de entrada
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(), // Aplica un borde alrededor del campo de entrada
-                          suffixIcon: Icon(Icons.calendar_today), // Ícono de calendario
-                        ),
-                        keyboardType: TextInputType.datetime, // Tipo de teclado para fecha
-                      ),
-                    ],
+                  child: TextFormField(
+                    enabled: false,
+                    initialValue: 'xxx',
+                    decoration: InputDecoration(
+                      labelText: 'Fecha Inicio',
+                      border: OutlineInputBorder(),
+                      prefixIcon: Icon(Icons
+                          .calendar_today), // Agrega el ícono de calendario aquí
+                    ),
                   ),
                 ),
-                SizedBox(width: 16), // Espacio entre los campos de fecha
+                SizedBox(width: 8), // Espacio entre los dos campos
                 Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Fecha fin',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 8), // Espacio entre el título y el campo de entrada
-                      TextField(
-                        enabled: false, // Deshabilita el campo de entrada
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(), // Aplica un borde alrededor del campo de entrada
-                          suffixIcon: Icon(Icons.calendar_today), // Ícono de calendario
-                        ),
-                        keyboardType: TextInputType.datetime, // Tipo de teclado para fecha
-                      ),
-                    ],
+                  child: TextFormField(
+                    enabled: false,
+                    initialValue: 'xxx',
+                    decoration: InputDecoration(
+                      labelText: 'Fecha Fin',
+                      border: OutlineInputBorder(),
+                      prefixIcon: Icon(Icons
+                          .calendar_today), // Agrega el ícono de calendario aquí
+                    ),
                   ),
                 ),
               ],
-            ),SizedBox(height: 16), // Espacio entre el label con fondo y los campos de entrada adicionales
+            ),
+            SizedBox(height:30), // Espacio entre el label con fondo y los campos de entrada adicionales
             Row(
               children: <Widget>[
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(
-                        'Cod. Local',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 8), // Espacio entre el título y el campo de entrada
-                      TextField(
+                      TextFormField(
+                        initialValue: 'xxx',
                         decoration: InputDecoration(
+                          labelText: 'Cod. Local',
+                          border: OutlineInputBorder(),
+                          disabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors
+                                    .black), // Borde cuando está deshabilitado
+                          ),
+                        ),
+                        enabled: false, // Deshabilita el TextFormField
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(width: 3), // Espacio entre los campos de entrada
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      TextFormField(
+                        enabled: false,
+                        initialValue: 'xxx',
+                        decoration: InputDecoration(
+                          labelText: 'Punto Exp.',
                           border: OutlineInputBorder(),
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(width: 16), // Espacio entre los campos de entrada
+                SizedBox(width: 3), // Espacio entre los campos de entrada
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(
-                        'Punto Exp.',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 8), // Espacio entre el título y el campo de entrada
-                      TextField(
+                      TextFormField(
+                        enabled: false,
+                        initialValue: 'xxx',
                         decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(width: 16), // Espacio entre los campos de entrada
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Nro. Factura',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 8), // Espacio entre el título y el campo de entrada
-                      TextField(
-                        decoration: InputDecoration(
+                          labelText: 'Nro. Factura',
                           border: OutlineInputBorder(),
                         ),
                       ),
@@ -145,47 +110,38 @@ class InvoiInfo extends StatelessWidget {
                   ),
                 ),
               ],
-            ),SizedBox(height: 16), 
+            ),
+            SizedBox(height: 30),
             Row(
               children: [
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(
-                        'Nro. factura desde:',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 8), // Espacio entre el título y el campo de entrada
-                      TextField(
+                      TextFormField(
+                        enabled: false,
+                        initialValue: 'xxx',
                         decoration: InputDecoration(
+                          labelText: 'Nro. Fact. Desde',
                           border: OutlineInputBorder(),
                         ),
-                      ),
+                      ) // Espacio entre el título y el campo de entrada
                     ],
                   ),
                 ),
-                SizedBox(width: 16),
+                SizedBox(width: 8),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(
-                        'Nro. factura hasta:',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 8), // Espacio entre el título y el campo de entrada
-                      TextField(
+                      TextFormField(
+                        enabled: false,
+                        initialValue: 'xxx',
                         decoration: InputDecoration(
+                          labelText: 'Nro. Fact. Hasta',
                           border: OutlineInputBorder(),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 )
